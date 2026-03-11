@@ -34,7 +34,7 @@ export default function About() {
             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-bg-200">
               {/* يمكنك وضع صورة تعبيرية لفريق العمل أو مكتب الشركة هنا */}
               <div className="aspect-square bg-primary-300/20 flex items-center justify-center">
-                <span className="text-primary-100 font-bold">Himna Vision</span>
+                <img src="2.png" alt="Team" className="w-full h-full object-cover" />
               </div>
             </div>
             {/* زخرفة خلفية ناعمة */}

@@ -1,27 +1,27 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 
-@theme {
+@theme { */
   /* الألوان الأساسية - Primary */
-  --color-primary-100: #0077c2;
+  /* --color-primary-100: #0077c2;
   --color-primary-200: #59a5f5;
-  --color-primary-300: #c8ffff;
+  --color-primary-300: #c8ffff; */
 
   /* ألوان التميز - Accent */
-  --color-accent-100: #00bfff;
-  --color-accent-200: #00619a;
+  /* --color-accent-100: #00bfff;
+  --color-accent-200: #00619a; */
 
   /* ألوان النصوص - Text */
-  --color-text-100: #333333;
-  --color-text-200: #5c5c5c;
+  /* --color-text-100: #333333;
+  --color-text-200: #5c5c5c; */
 
   /* ألوان الخلفية - Background */
-  --color-bg-100: #ffffff;
+  /* --color-bg-100: #ffffff;
   --color-bg-200: #f5f5f5;
-  --color-bg-300: #cccccc;
+  --color-bg-300: #cccccc; */
 
   /* تعريف الخط */
-  --font-cairo: var(--font-cairo);
-}
+  /* --font-cairo: var(--font-cairo); */
+/* }
 
 
 @layer base {
@@ -34,5 +34,46 @@
 @layer utilities {
   .shadow-soft {
     box-shadow: 0 4px 20px rgba(0, 119, 194, 0.1);
+  }
+} */
+
+
+
+@import "tailwindcss";
+
+@theme {
+  /* الألوان الأساسية - Primary (مستوحاة من التدرجات الزرقاء في الصورة) */
+  --color-primary-100: #81A6C6; /* الكحلي الغامق - اللون الأساسي للخلفية */
+  --color-primary-200: #1C57B7; /* الأزرق الملكي - للأزرار والعناصر التفاعلية */
+  --color-primary-300: #3D7AE1; /* أزرق فاتح للتدرجات */
+
+  /* ألوان التميز - Accent (اللون الذهبي/الرملي من شعار يوم التأسيس) */
+  --color-accent-100: #D5B478; /* الذهبي الأساسي للتمييز */
+  --color-accent-200: #B8965A; /* ذهبي داكن للظلال أو النصوص الهامة */
+
+  /* ألوان النصوص - Text */
+  --color-text-100: #FFFFFF; /* نص أبيض للخلفيات الغامقة */
+  --color-text-200: #D1D5DB; /* رمادي فاتح جداً للنصوص الثانوية */
+
+  /* ألوان الخلفية - Background */
+  --color-bg-100: #001A4F; /* خلفية كحلية غامقة (مثل الصورة) */
+  --color-bg-200: #111827; /* درجة أغمق قليلاً للأقسام */
+  --color-bg-300: #FFFFFF; /* اللون الأبيض للأقسام التي تحتاج خلفية فاتحة */
+
+  /* تعريف الخط */
+  --font-cairo: var(--font-cairo);
+}
+
+@layer base {
+  body {
+    @apply bg-bg-100 text-text-100 antialiased;
+    font-family: var(--font-cairo), sans-serif;
+  }
+}
+
+@layer utilities {
+  .shadow-soft {
+    /* تم تعديل لون الظل ليتناسب مع الكحلي الغامق */
+    box-shadow: 0 4px 20px rgba(0, 26, 79, 0.2);
   }
 }

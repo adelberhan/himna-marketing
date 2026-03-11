@@ -19,9 +19,10 @@ export default function Navbar() {
   // تعريف الروابط في مصفوفة لتسهيل الإدارة
   const menuItems = [
     { label: "الرئيسية", path: "/" },
-    { label: "من نحن", path: "/about" },
-    { label: "خدماتنا", path: "/services" },
-    { label: "أعمالنا", path: "/portfolio" },
+    { label: "من نحن", path: "/#about" },
+    { label: "خدماتنا", path: "/#services" },
+    { label: "أعمالنا", path: "/#portfolio" },
+    { label: "اتصل بنا", path: "/#contact" },
   ];
 
   return (
@@ -36,7 +37,7 @@ export default function Navbar() {
           <img
             src="/logo.png"
             alt="Himna Marketing Logo"
-            className="h-18 w-auto group-hover:scale-105 transition-transform"
+            className="h-20 w-auto group-hover:scale-105 transition-transform"
           />
         </Link>
 
