@@ -67,11 +67,7 @@ export default function About() {
               ))}
             </div>
 
-            <div className="mt-10">
-              <button className="bg-bg-100 text-primary-100 px-8 py-3 rounded-xl font-bold hover:bg-primary-300/30 transition-all">
-                تعرف على قصتنا
-              </button>
-            </div>
+        
           </motion.div>
         </div>
       </div>

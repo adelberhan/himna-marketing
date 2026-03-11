@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft, Sparkles } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 
 export default function Hero() {
   return (
@@ -62,23 +63,25 @@ export default function Hero() {
         >
           {/* زر "ابدأ رحلة النجاح" - Primary Button */}
           <Link
-            href="/contact"
-            className="group relative px-8 py-4 bg-primary-100 text-white rounded-2xl font-bold text-lg overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_10px_30px_rgba(0,119,194,0.3)]"
+            href="https://wa.me/966570591088"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative px-8 py-4 text-white hover:text-white  hover:bg-bg-200 bg-primary-200 rounded-2xl font-bold text-lg overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-[0_10px_30px_rgba(0,119,194,0.3)]"
           >
-            <span className="relative z-10 flex items-center gap-2">
-              ابدأ رحلة النجاح <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+            <span className="relative hover:text-white  z-10 flex items-center gap-2">
+              ابدأ رحلة النجاح <FaWhatsapp className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             </span>
             {/* تأثير اللمعان المتحرك */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
           </Link>
 
           {/* زر "شاهد أعمالنا" - Secondary Button */}
-          <Link
+          {/* <Link
             href="/portfolio"
-            className="px-8 py-4 bg-bg-200 hover:bg-bg-300 text-primary-100 border border-primary-100/10 rounded-2xl font-bold text-lg transition-all"
+            className="px-8 py-4 hover:scale-105 bg-bg-200 hover:bg-primary-200 hover:text-white text-primary-100 border border-primary-100/10 rounded-2xl font-bold text-lg transition-all"
           >
             شاهد أعمالنا
-          </Link>
+          </Link> */}
         </motion.div>
       </div>
 

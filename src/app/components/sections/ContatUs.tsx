@@ -1,26 +1,27 @@
 "use client";
 import { motion } from "framer-motion";
 import { Phone, Mail, MessageCircle, MapPin } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa"; // FontAwesome version
 
 export default function Contact() {
   const contactInfo = [
     {
       icon: <Phone className="w-6 h-6" />,
       label: "اتصل بنا",
-      value: "+(20) 1014308323",
-      href: "tel:+201014308323",
+      value: "0570591088",
+      href: "tel:+966570591088",
     },
     {
       icon: <Mail className="w-6 h-6" />,
       label: "البريد الإلكتروني",
-      value: "info@himna.com",
-      href: "mailto:info@himna.com",
+      value: "RH-2025@outlook.sa",
+      href: "mailto:RH-2025@outlook.sa",
     },
     {
-      icon: <MessageCircle className="w-6 h-6" />,
+      icon: <FaWhatsapp className="w-6 h-6" />, // You can even make it green!
       label: "واتساب",
       value: "تواصل سريع",
-      href: "https://wa.me/201014308323",
+      href: "https://wa.me/966570591088",
     },
   ];
 
@@ -28,9 +29,7 @@ export default function Contact() {
     <section id="contact" className="py-24 bg-bg-100">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-text-100 mb-4">
-            لنبدأ رحلة النجاح معاً
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-text-100 mb-4">لنبدأ رحلة النجاح معاً</h2>
           <p className="text-text-200 max-w-2xl mx-auto">
             نحن هنا للإجابة على استفساراتك ومساعدتك في اختيار الاستراتيجية الأنسب لنمو أعمالك.
           </p>
@@ -48,18 +47,18 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="p-6 bg-bg-200 rounded-3xl border border-primary-300/10 hover:shadow-soft transition-all group"
                 >
-                  <div className="text-primary-100 mb-4 group-hover:scale-110 transition-transform">
-                    {item.icon}
-                  </div>
+                  <div className="text-primary-100 mb-4 group-hover:scale-110 transition-transform">{item.icon}</div>
                   <h4 className="text-text-200 text-sm mb-1">{item.label}</h4>
                   <p className="text-text-100 font-bold">{item.value}</p>
                 </a>
               ))}
-              
+
               <div className="p-6 bg-bg-200 rounded-3xl border border-primary-300/10">
                 <MapPin className="w-6 h-6 text-primary-100 mb-4" />
                 <h4 className="text-text-200 text-sm mb-1">الموقع</h4>
-                <p className="text-text-100 font-bold">مدينة 6 أكتوبر، الجيزة</p>
+                <p className="text-text-100 font-bold">
+                  شارع جبور بن رشيد حي المربع, الرياض 12628, المملكة العربية السعودية
+                </p>
               </div>
             </div>
 
@@ -72,8 +71,8 @@ export default function Contact() {
 
           {/* الخريطة */}
           <div className="h-[400px] rounded-3xl overflow-hidden shadow-soft border border-primary-300/10 relative">
-             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55251.37709964824!2d30.913980!3d29.9611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458564f26df199d%3A0x24a64fdd2ede5678!2zNmthIG9mIE9jdG9iZXIgQ2l0eSwgR2l6YSBHb3Zlcm5vcmF0ZQ!5e0!3m2!1sen!2seg!4v1710000000000!5m2!1sen!2seg"
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58016.99146267533!2d46.66847753938204!3d24.65599530842636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f059cd9332245%3A0xccbaa623d3351e8a!2z2YfZitmF2YbYqSDZhNmE2K7Yr9mF2KfYqiDYp9mE2KrYs9mI2YrZgtmK2Kk!5e0!3m2!1sen!2seg!4v1773204732028!5m2!1sen!2seg"
               className="absolute inset-0 w-full h-full grayscale-[0.2] hover:grayscale-0 transition-all duration-500"
               style={{ border: 0 }}
               allowFullScreen

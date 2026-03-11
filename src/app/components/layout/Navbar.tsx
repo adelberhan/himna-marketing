@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -47,18 +48,20 @@ export default function Navbar() {
             <Link
               key={item.path}
               href={item.path}
-              className="text-text-200 hover:text-primary-100 transition-colors font-medium"
+              className="text-text-200 hover:text-primary-100 hover:scale-105 transition-colors font-medium"
             >
               {item.label}
               <span className="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary-100 transition-all group-hover:w-full"></span>
             </Link>
           ))}
-          <Link
-            href="/contact"
+          {/* <Link
+            href="https://wa.me/966570591088"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-primary-100 hover:bg-primary-200 text-white px-7 py-2.5 rounded-full transition-all shadow-md font-bold"
           >
-            ابدأ مشروعك
-          </Link>
+            ابدأ مشروعك  <FaWhatsapp className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+          </Link> */}
         </div>
 
         {/* Mobile Toggle */}
@@ -69,7 +72,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-bg-100/95 backdrop-blur-xl border-b border-primary-100/10 animate-in fade-in slide-in-from-top-5 shadow-xl">
+        <div className="md:hidden absolute top-full left-0 w-full bg-bg-100/95 backdrop-blur-xl border-b border-primary-100/10 animate-in fade-in slide-in-from-top-5 shadow-xl ">
           
           <div className="flex flex-col p-6 space-y-4 text-center">
             {menuItems.map((item) => (
@@ -77,18 +80,18 @@ export default function Navbar() {
                 key={item.path}
                 href={item.path}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg font-semibold py-2 border-b border-white/5 last:border-0"
+                className="text-lg font-semibold hover:text-white hover:bg-primary-200 transition-colors py-2 border-b border-white/5 last:border-0 hover:scale-105"
               >
                 {item.label}
               </Link>
             ))}
-            <Link
+            {/* <Link
               href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
               className="bg-brand-primary text-white py-4 rounded-xl font-bold"
             >
               تواصل معنا الآن
-            </Link>
+            </Link> */}
           </div>
         </div>
       )}

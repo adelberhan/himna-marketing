@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body className={`${cairo.variable} font-cairo antialiased bg-bg-100 text-text-100`}>
         
         <ThemeProvider>
