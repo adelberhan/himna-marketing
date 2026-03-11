@@ -36,7 +36,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="group">
           <img
-            src="/logo.png"
+            src="/MainLogo.png"
             alt="Himna Marketing Logo"
             className="h-20 w-auto group-hover:scale-105 transition-transform"
           />
