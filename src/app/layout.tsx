@@ -12,6 +12,9 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   title: "هيمنة للخدمات التسويقية | Himna Marketing",
   description: "نخفف عليك ضغوط أعمالك ونتولى مهامك التسويقية بكل احترافية.",
+  icons: {
+    icon: "/ham.svg",
+  },
 };
 
 export default function RootLayout({
@@ -22,7 +25,6 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body className={`${cairo.variable} font-cairo antialiased bg-bg-100 text-text-100`}>
-        
         <ThemeProvider>
           <Navbar /> {/* <-- وضعه هنا ليكون ثابتاً في كل الموقع */}
           <main className="min-h-screen ">

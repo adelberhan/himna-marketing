@@ -9,7 +9,7 @@ export async function fetchTestimonials() {
   return data;
 }
 
-export async function addTestimonial(item) {
+export async function addTestimonial(item: Record<string, any>) {
   const { data, error } = await supabase
     .from("testimonials")
     .insert([item])
@@ -18,7 +18,7 @@ export async function addTestimonial(item) {
   return data;
 }
 
-export async function updateTestimonial(id, updates) {
+export async function updateTestimonial(id: string | number, updates: Record<string, any>) {
   const { data, error } = await supabase
     .from("testimonials")
     .update(updates)
@@ -28,7 +28,7 @@ export async function updateTestimonial(id, updates) {
   return data;
 }
 
-export async function deleteTestimonial(id) {
+export async function deleteTestimonial(id: string | number) {
   const { error } = await supabase
     .from("testimonials")
     .delete()

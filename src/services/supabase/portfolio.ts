@@ -9,7 +9,7 @@ export async function fetchPortfolio() {
   return data;
 }
 
-export async function addPortfolio(item) {
+export async function addPortfolio(item: Record<string, any>) {
   const { data, error } = await supabase
     .from("portfolio")
     .insert([item])
@@ -18,7 +18,7 @@ export async function addPortfolio(item) {
   return data;
 }
 
-export async function updatePortfolio(id, updates) {
+export async function updatePortfolio(id: string | number, updates: Record<string, any>) {
   const { data, error } = await supabase
     .from("portfolio")
     .update(updates)
@@ -28,7 +28,7 @@ export async function updatePortfolio(id, updates) {
   return data;
 }
 
-export async function deletePortfolio(id) {
+export async function deletePortfolio(id: string | number) {
   const { error } = await supabase
     .from("portfolio")
     .delete()
