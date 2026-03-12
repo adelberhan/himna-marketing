@@ -27,7 +27,7 @@ export default function Footer() {
           {/* العمود الأول: الهوية */}
           <div className="flex flex-col gap-4">
             <Link href="/" className="text-2xl font-bold text-primary-100">
-              هيمنة<span className="text-accent-100">.</span>
+              هيمنة<span className="text-primary-100">.</span>
             </Link>
             <p className="text-text-200 leading-relaxed max-w-sm">
               وكالة تسويق إبداعية تسعى لصناعة التأثير وتخفيف الأعباء التسويقية عن كاهل رواد الأعمال.

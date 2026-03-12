@@ -63,7 +63,7 @@ export default function Contact() {
             </div>
 
             {/* رسالة تشجيعية */}
-            <div className="p-8 bg-primary-100 rounded-3xl text-white">
+            <div className="p-8 bg-bg-200 rounded-3xl text-white">
               <h3 className="text-xl font-bold mb-2">هل أنت مستعد للهيمنة؟</h3>
               <p className="opacity-90">احصل على استشارة مجانية لتحليل حضورك الرقمي الآن.</p>
             </div>

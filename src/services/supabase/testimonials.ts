@@ -1,5 +1,20 @@
 import { supabase } from "@/lib/supabaseClient";
 
+interface ITestimonial {
+  name: string;
+  content: string;
+  position: string;
+  image: string;
+  created_at: string;
+}
+
+export interface ITestimonialInput {
+  name: string;
+  content: string;
+  position: string;
+  image: string;
+}
+
 export async function fetchTestimonials() {
   const { data, error } = await supabase
     .from("testimonials")
@@ -9,7 +24,7 @@ export async function fetchTestimonials() {
   return data;
 }
 
-export async function addTestimonial(item: Record<string, any>) {
+export async function addTestimonial(item: ITestimonialInput) {
   const { data, error } = await supabase
     .from("testimonials")
     .insert([item])
@@ -18,7 +33,7 @@ export async function addTestimonial(item: Record<string, any>) {
   return data;
 }
 
-export async function updateTestimonial(id: string | number, updates: Record<string, any>) {
+export async function updateTestimonial(id: string | number, updates: ITestimonialInput) {
   const { data, error } = await supabase
     .from("testimonials")
     .update(updates)
