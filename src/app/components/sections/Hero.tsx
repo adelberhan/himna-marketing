@@ -29,18 +29,15 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* 3. العنوان الرئيسي (Main Heading) */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[1.1] tracking-tighter"
+          className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[1.1] tracking-tighter "
         >
-          نصنع{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-l from-primary-100 to-primary-200">
-            التأثير
-          </span>
-          <br /> ونحقق الهيمنة
+          <span className="text-transparent bg-clip-text bg-gradient-to-l from-primary-100 to-primary-200">هيمنة</span>
+          <br />
+          للتسويق الرقمي
         </motion.h1>
 
         {/* 4. الوصف (Sub-heading) */}
@@ -50,8 +47,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="max-w-2xl mx-auto text-brand-gray text-lg md:text-xl mb-12 leading-relaxed"
         >
-          في "هيمنة"، نخفف عنك ضغوط أعمالك ونتولى مهامك التسويقية بكل احترافية، لننقل علامتك التجارية إلى آفاق جديدة من
-          النمو والإبداع.
+          هيمنة وكالة تسويق رقمي متخصصة في إدارة السوشيال ميديا وصناعة المحتوى والحملات الإعلانية لمساعدة الشركات على
+          النمو وتحقيق حضور قوي في السوق السعودي.{" "}
         </motion.p>
 
         {/* 5. أزرار التحكم (CTA Buttons) */}
@@ -74,14 +71,6 @@ export default function Hero() {
             {/* تأثير اللمعان المتحرك */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
           </Link>
-
-          {/* زر "شاهد أعمالنا" - Secondary Button */}
-          {/* <Link
-            href="/portfolio"
-            className="px-8 py-4 hover:scale-105 bg-bg-200 hover:bg-primary-200 hover:text-white text-primary-100 border border-primary-100/10 rounded-2xl font-bold text-lg transition-all"
-          >
-            شاهد أعمالنا
-          </Link> */}
         </motion.div>
       </div>
 

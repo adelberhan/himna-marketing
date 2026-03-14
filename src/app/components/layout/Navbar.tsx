@@ -49,7 +49,7 @@ export default function Navbar() {
   const menuItems = [
     { label: "الرئيسية", path: "/" },
     { label: "من نحن", path: "/#about" },
-    { label: "خدماتنا", path: "/#services" },
+    { label: "خدماتنا", path: "/services" },
     { label: "أعمالنا", path: "/#portfolio" },
     { label: "اتصل بنا", path: "/#contact" },
   ];
@@ -76,7 +76,7 @@ export default function Navbar() {
           <img
             src="/MainLogo.png"
             alt="Himna Marketing Logo"
-            className="h-20 w-auto group-hover:scale-105 transition-transform"
+            className="h-12 md:h-20 w-auto group-hover:scale-105 transition-transform"
           />
         </Link>
 

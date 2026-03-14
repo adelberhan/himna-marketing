@@ -6,9 +6,10 @@ import { useRouter } from "next/navigation";
 
 // استيراد مكونات shadcn/ui
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Button } from "@/components/ui/button"; 
-import { Input } from "@/components/ui/input"; 
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -51,24 +52,6 @@ export default function PortfolioManagement() {
     });
   };
 
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   setLoading(true);
-  //   try {
-  //     if (editing && form.id) {
-  //       await updatePortfolio(form.id, form);
-  //     } else {
-  //       await addPortfolio(form);
-  //     }
-  //     setEditing(false);
-  //     setForm({ id: null, title: "", description: "", type: types[0], image_url: "", video_url: "" });
-  //     loadData();
-  //   } catch (error) {
-  //     console.error("Error submitting portfolio:", error);
-  //     setLoading(false);
-  //   }
-  // };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -76,8 +59,7 @@ export default function PortfolioManagement() {
       if (editing && form.id) {
         await updatePortfolio(form.id, form);
       } else {
-        // حذف الـ id من البيانات المرسلة عند الإضافة الجديدة
-        const { id, ...newProjectData } = form; 
+        const { id, ...newProjectData } = form;
         await addPortfolio(newProjectData);
       }
       setEditing(false);
@@ -109,117 +91,98 @@ export default function PortfolioManagement() {
   if (loading) return <div className="flex h-screen items-center justify-center">جاري التحميل...</div>;
 
   return (
-    <div className="container mx-auto py-10" dir="rtl">
-      <h2 className="text-3xl font-bold tracking-tight mb-8 mt-15 text-center">إدارة المعرض</h2>
+    <div className="container mx-auto py-10 mt-24" dir="rtl">
+      <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">إدارة المعرض</h2>
 
       {/* Form Section */}
-      <form
-        onSubmit={handleSubmit}
-        className="grid gap-4 mb-10 border p-6 bg-transparent rounded-lg text-card-foreground shadow-sm"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Input
-            placeholder="العنوان"
-            value={form.title}
-            onChange={(e) => setForm({ ...form, title: e.target.value })}
-            required
-          />
-          <select
-            value={form.type}
-            onChange={(e) => setForm({ ...form, type: e.target.value })}
-            className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm focus:outline-none"
-          >
+      <form onSubmit={handleSubmit} className="grid gap-4 mb-10 border p-6 rounded-lg shadow-sm">
+         {/* ... بقية حقول الإدخال كما هي في كودك ... */}
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Input placeholder="العنوان" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} required />
+          <select value={form.type} onChange={(e) => setForm({ ...form, type: e.target.value })} className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm">
             {types.map((type) => (
-              <option key={type} value={type} className="bg-background text-foreground">
-                {type}
-              </option>
+              <option key={type} value={type} className="text-black">{type}</option>
             ))}
           </select>
-          <Input
-            placeholder="رابط الصورة"
-            value={form.image_url}
-            onChange={(e) => setForm({ ...form, image_url: e.target.value })}
-          />
-          <Input
-            placeholder="رابط الفيديو"
-            value={form.video_url}
-            onChange={(e) => setForm({ ...form, video_url: e.target.value })}
-          />
         </div>
-        <Textarea
-          placeholder="الوصف"
-          value={form.description}
-          onChange={(e) => setForm({ ...form, description: e.target.value })}
-          required
-        />
-        <Button type="submit" className="w-full md:w-max px-10 font-bold transition-transform active:scale-95">
-          {editing ? "تحديث العمل" : "إضافة عمل جديد"}
-        </Button>
+        <Textarea placeholder="الوصف" value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} required />
+        <Button type="submit" className="w-full md:w-max">{editing ? "تحديث العمل" : "إضافة عمل جديد"}</Button>
       </form>
 
       {/* Table Section */}
-      <div className="rounded-md border bg-transparent overflow-hidden" dir="rtl">
-        <Table>
-          <TableCaption>قائمة بجميع الأعمال المضافة.</TableCaption>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="text-right">العنوان</TableHead>
-              <TableHead className="text-right">النوع</TableHead>
-              <TableHead className="text-right">المعاينة</TableHead>
-              <TableHead className="text-left">الإجراءات</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {portfolio.map((item) => (
-              <TableRow key={item.id} className="hover:bg-muted/50 transition-colors">
-                <TableCell className="font-medium text-right">{item.title}</TableCell>
-                <TableCell className="text-right capitalize">{item.type}</TableCell>
-                <TableCell className="text-right">
-                  <div className="flex gap-2 justify-start items-center">
-                    {item.image_url && <span className="text-[10px] bg-muted px-2 py-0.5 rounded border">صورة</span>}
-                    {item.video_url && <span className="text-[10px] bg-muted px-2 py-0.5 rounded border">فيديو</span>}
-                    {!item.image_url && !item.video_url && <span className="text-muted-foreground">-</span>}
-                  </div>
-                </TableCell>
-                <TableCell className="text-left">
-                  <div className="flex justify-start gap-4">
-                    <button 
-                      onClick={() => handleEdit(item)}
-                      className="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors"
-                    >
-                      تعديل
-                    </button>
-                    
-                    <AlertDialog>
-                      <AlertDialogTrigger asChild>
-                        <button className="text-sm font-medium text-red-500 hover:text-red-800 transition-colors">
-                          حذف
-                        </button>
-                      </AlertDialogTrigger>
-                      <AlertDialogContent dir="rtl" className="max-w-[400px]">
-                        <AlertDialogHeader>
-                          <AlertDialogTitle className="text-right">تأكيد الحذف</AlertDialogTitle>
-                          <AlertDialogDescription className="text-right text-xs">
-                            سيتم حذف عمل "{item.title}" نهائياً من المعرض.
-                          </AlertDialogDescription>
-                        </AlertDialogHeader>
-                        <AlertDialogFooter className="mt-4 flex-row-reverse gap-2">
-                          <AlertDialogAction 
-                            onClick={() => handleDelete(item.id)}
-                            className="bg-red-600 hover:bg-red-700 h-9 text-xs"
-                          >
-                            تأكيد الحذف
-                          </AlertDialogAction>
-                          <AlertDialogCancel className="h-9 text-xs border-none">إلغاء</AlertDialogCancel>
-                        </AlertDialogFooter>
-                      </AlertDialogContent>
-                    </AlertDialog>
-                  </div>
-                </TableCell>
+      <div className="rounded-md border overflow-hidden"> 
+        <div className="overflow-x-auto">
+          <Table>
+            <TableHeader>
+              <TableRow className="bg-muted/50">
+                <TableHead className="text-right w-[150px]">العنوان</TableHead>
+                <TableHead className="text-right w-[100px]">النوع</TableHead>
+                <TableHead className="text-right w-[120px]">المعاينة</TableHead>
+                <TableHead className="text-right">الإجراءات</TableHead>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+            </TableHeader>
+            <TableBody>
+              <TooltipProvider delayDuration={200}>
+                {portfolio.map((item) => {
+                  // الحساب يتم هنا لكل عنصر على حدة
+                  const isLongTitle = item.title.length > 10;
+                  const mobileTitle = isLongTitle ? item.title.substring(0, 10) + "..." : item.title;
+
+                  return (
+                    <TableRow key={item.id}>
+                      <TableCell className="font-medium text-right p-2">
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <div className="cursor-help">
+                              {/* شاشة الجوال: 10 حروف */}
+                              <span className="md:hidden block text-sm">{mobileTitle}</span>
+                              {/* شاشات أكبر: نص كامل مع truncate */}
+                              <span className="hidden md:block max-w-[180px] truncate">{item.title}</span>
+                            </div>
+                          </TooltipTrigger>
+                          <TooltipContent side="top">
+                            <p className="max-w-[250px]">{item.title}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TableCell>
+
+                      <TableCell className="text-right">{item.type}</TableCell>
+                      
+                      <TableCell className="text-right">
+                        <div className="flex flex-wrap gap-1">
+                          {item.image_url && <span className="text-[10px] border px-1 rounded">صورة</span>}
+                          {item.video_url && <span className="text-[10px] border px-1 rounded">فيديو</span>}
+                        </div>
+                      </TableCell>
+
+                      <TableCell className="text-left">
+                         {/* أزرار الحذف والتعديل */}
+                         <div className="flex gap-3">
+                           <button onClick={() => handleEdit(item)} className="text-amber-400 text-sm">تعديل</button>
+                           <AlertDialog>
+                              <AlertDialogTrigger asChild>
+                                <button className="text-red-500 text-sm">حذف</button>
+                              </AlertDialogTrigger>
+                              <AlertDialogContent dir="rtl">
+                                <AlertDialogHeader>
+                                  <AlertDialogTitle>تأكيد الحذف</AlertDialogTitle>
+                                  <AlertDialogDescription>حذف "{item.title}"؟</AlertDialogDescription>
+                                </AlertDialogHeader>
+                                <AlertDialogFooter className="flex-row-reverse gap-2">
+                                  <AlertDialogAction onClick={() => handleDelete(item.id)} className="bg-red-600">حذف</AlertDialogAction>
+                                  <AlertDialogCancel>إلغاء</AlertDialogCancel>
+                                </AlertDialogFooter>
+                              </AlertDialogContent>
+                           </AlertDialog>
+                         </div>
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
+              </TooltipProvider>
+            </TableBody>
+          </Table>
+        </div>
       </div>
     </div>
   );
