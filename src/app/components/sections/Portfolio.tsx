@@ -55,8 +55,8 @@ export default function Portfolio() {
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <button 
               onClick={() => setFilter('all')}
-              className={`px-6 py-2 rounded-full font-bold transition-all border ${
-                filter === 'all' ? 'bg-foreground text-background border-foreground' : 'border-input hover:bg-muted'
+              className={`px-6 py-2 rounded-full font-bold transition-all border hover:text-primary-200 ${
+                filter === 'all' ? 'bg-foreground text-background border-foreground hover:text-primary-200 hover:bg-white' : 'border-input hover:bg-muted '
               }`}
             >
               الكل
@@ -65,8 +65,8 @@ export default function Portfolio() {
               <button 
                 key={type}
                 onClick={() => setFilter(type)}
-                className={`flex items-center gap-2 px-6 py-2 rounded-full font-bold transition-all border capitalize ${
-                  filter === type ? 'bg-foreground text-background border-foreground' : 'border-input hover:bg-muted'
+                className={`flex items-center gap-2 px-6 py-2 rounded-full font-bold transition-all border capitalize hover:text-primary-200 ${
+                  filter === type ? 'hover:bg-foreground bg-muted text-primary-200 hover:text-white border-foreground ' : 'border-input hover:bg-muted'
                 }`}
               >
                 {getTypeIcon(type)}

@@ -2,16 +2,18 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, LogOut } from "lucide-react";
 import { supabase } from "@/lib/supabaseClient"; // تأكد من مسار الاستيراد الصحيح
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [user, setUser] = useState<any>(null); // حالة تتبع المستخدم
   const router = useRouter();
 
+  
   // تأثير لمراقبة التمرير (Scroll)
   useEffect(() => {
     const handleScroll = () => {
@@ -48,10 +50,10 @@ export default function Navbar() {
   // الروابط الأساسية (تظهر للجميع)
   const menuItems = [
     { label: "الرئيسية", path: "/" },
-    { label: "من نحن", path: "/#about" },
+    { label: "من نحن", path: "/about" },
     { label: "خدماتنا", path: "/services" },
-    { label: "أعمالنا", path: "/#portfolio" },
-    { label: "اتصل بنا", path: "/#contact" },
+    { label: "أعمالنا", path: "/portfolio" },
+    { label: "اتصل بنا", path: "/contact" },
   ];
 
   // الروابط الخاصة بالداشبورد (تظهر فقط للمسجلين)
@@ -66,7 +68,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300  ${
         isScrolled ? "backdrop-blur-md py-1 border-b border-primary-100/5 bg-bg-100/80" : "bg-transparent py-7"
       }`}
     >
@@ -82,18 +84,27 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          {activeMenuItems.map((item) => (
-            <Link
-              key={item.path}
-              href={item.path}
-              className={`text-text-200 hover:text-primary-100 hover:scale-105 transition-colors font-medium relative group ${
-                user && authMenuItems.includes(item) ? "text-accent-200 font-bold" : "" // تمييز لون روابط الداشبورد
-              }`}
-            >
-              {item.label}
-              <span className="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary-100 transition-all group-hover:w-full"></span>
-            </Link>
-          ))}
+          {activeMenuItems.map((item) => {
+            const isActive = pathname === item.path;
+            const isAuthItem = authMenuItems.some(auth => auth.path === item.path);
+
+            return (
+              <Link
+                key={item.path}
+                href={item.path}
+                className={`text-sm transition-all font-medium relative group ${
+                  isActive ? "text-primary-100" : "text-text-200 hover:text-primary-100"
+                } ${isAuthItem ? "text-accent-200" : ""}`}
+              >
+                {item.label}
+                <span
+                  className={`absolute -bottom-1 right-0 h-0.5 bg-primary-100 transition-all ${
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                ></span>
+              </Link>
+            );
+          })}
 
           {/* زر تسجيل الخروج يظهر فقط إذا كان المستخدم مسجلاً */}
           {user && (
