@@ -19,6 +19,10 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   metadataBase: new URL("https://himna-marketing.vercel.app"),
 
+  verification: {
+    google: "B5qPdiT6GrM8TMGp2sM7_U2rx0FNwUv_s9Sa9y0Y_Mg",
+  },
+
   title: "هيمنة للتسويق الرقمي | وكالة تسويق إبداعية في السعودية",
 
   description:
