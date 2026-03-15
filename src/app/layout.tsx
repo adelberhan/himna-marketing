@@ -17,7 +17,10 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://himna-marketing.vercel.app"),
+
   title: "هيمنة للتسويق الرقمي | وكالة تسويق إبداعية في السعودية",
+
   description:
     "هيمنة وكالة تسويق رقمي متخصصة في إدارة السوشيال ميديا، صناعة المحتوى، والحملات الإعلانية. نساعد علامتك التجارية على الهيمنة على السوق السعودي.",
 
@@ -35,12 +38,13 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "هيمنة للتسويق الرقمي",
-    description: "وكالة تسويق رقمي متخصصة في إدارة السوشيال ميديا وصناعة المحتوى والحملات الإعلانية.",
+    description:
+      "وكالة تسويق رقمي متخصصة في إدارة السوشيال ميديا وصناعة المحتوى والحملات الإعلانية.",
     url: "https://himna-marketing.vercel.app",
     siteName: "Himna Marketing",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/MainLogo.png",
         width: 1200,
         height: 630,
         alt: "Himna Marketing",
@@ -53,8 +57,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "هيمنة للتسويق الرقمي",
-    description: "وكالة تسويق رقمي متخصصة في إدارة السوشيال ميديا وصناعة المحتوى.",
-    images: ["/og-image.jpg"],
+    description:
+      "وكالة تسويق رقمي متخصصة في إدارة السوشيال ميديا وصناعة المحتوى.",
+    images: ["/MainLogo.png"],
   },
 };
 
