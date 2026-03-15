@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "Himna Marketing",
     images: [
       {
-        url: "/MainLogo.png",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "Himna Marketing",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     title: "هيمنة للتسويق الرقمي",
     description:
       "وكالة تسويق رقمي متخصصة في إدارة السوشيال ميديا وصناعة المحتوى.",
-    images: ["/MainLogo.png"],
+    images: ["/logo.png"],
   },
 };
 
