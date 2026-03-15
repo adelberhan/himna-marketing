@@ -96,21 +96,55 @@ export default function PortfolioManagement() {
 
       {/* Form Section */}
       <form onSubmit={handleSubmit} className="grid gap-4 mb-10 border p-6 rounded-lg shadow-sm">
-         {/* ... بقية حقول الإدخال كما هي في كودك ... */}
-         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Input placeholder="العنوان" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} required />
-          <select value={form.type} onChange={(e) => setForm({ ...form, type: e.target.value })} className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm">
+        {/* ... بقية حقول الإدخال كما هي في كودك ... */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <Input
+            placeholder="العنوان"
+            value={form.title}
+            onChange={(e) => setForm({ ...form, title: e.target.value })}
+            required
+          />
+          <Input
+            type="text"
+            placeholder="رابط الصورة"
+            value={form.image_url}
+            onChange={(e) => setForm({ ...form, image_url: e.target.value })}
+            className="p-3 rounded border border-white focus:outline-none"
+          />
+
+          <Input
+            type="text"
+            placeholder="رابط الفيديو"
+            value={form.video_url}
+            onChange={(e) => setForm({ ...form, video_url: e.target.value })}
+            className="p-3 rounded border border-white focus:outline-none"
+          />
+
+          <select
+            value={form.type}
+            onChange={(e) => setForm({ ...form, type: e.target.value })}
+            className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm"
+          >
             {types.map((type) => (
-              <option key={type} value={type} className="text-black">{type}</option>
+              <option key={type} value={type} className="text-black">
+                {type}
+              </option>
             ))}
           </select>
         </div>
-        <Textarea placeholder="الوصف" value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} required />
-        <Button type="submit" className="w-full md:w-max">{editing ? "تحديث العمل" : "إضافة عمل جديد"}</Button>
+        <Textarea
+          placeholder="الوصف"
+          value={form.description}
+          onChange={(e) => setForm({ ...form, description: e.target.value })}
+          required
+        />
+        <Button type="submit" className="w-full md:w-max">
+          {editing ? "تحديث العمل" : "إضافة عمل جديد"}
+        </Button>
       </form>
 
       {/* Table Section */}
-      <div className="rounded-md border overflow-hidden"> 
+      <div className="rounded-md border overflow-hidden">
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>
@@ -147,7 +181,7 @@ export default function PortfolioManagement() {
                       </TableCell>
 
                       <TableCell className="text-right">{item.type}</TableCell>
-                      
+
                       <TableCell className="text-right">
                         <div className="flex flex-wrap gap-1">
                           {item.image_url && <span className="text-[10px] border px-1 rounded">صورة</span>}
@@ -156,25 +190,29 @@ export default function PortfolioManagement() {
                       </TableCell>
 
                       <TableCell className="text-left">
-                         {/* أزرار الحذف والتعديل */}
-                         <div className="flex gap-3">
-                           <button onClick={() => handleEdit(item)} className="text-amber-400 text-sm">تعديل</button>
-                           <AlertDialog>
-                              <AlertDialogTrigger asChild>
-                                <button className="text-red-500 text-sm">حذف</button>
-                              </AlertDialogTrigger>
-                              <AlertDialogContent dir="rtl">
-                                <AlertDialogHeader>
-                                  <AlertDialogTitle>تأكيد الحذف</AlertDialogTitle>
-                                  <AlertDialogDescription>حذف "{item.title}"؟</AlertDialogDescription>
-                                </AlertDialogHeader>
-                                <AlertDialogFooter className="flex-row-reverse gap-2">
-                                  <AlertDialogAction onClick={() => handleDelete(item.id)} className="bg-red-600">حذف</AlertDialogAction>
-                                  <AlertDialogCancel>إلغاء</AlertDialogCancel>
-                                </AlertDialogFooter>
-                              </AlertDialogContent>
-                           </AlertDialog>
-                         </div>
+                        {/* أزرار الحذف والتعديل */}
+                        <div className="flex gap-3">
+                          <button onClick={() => handleEdit(item)} className="text-amber-400 text-sm">
+                            تعديل
+                          </button>
+                          <AlertDialog>
+                            <AlertDialogTrigger asChild>
+                              <button className="text-red-500 text-sm">حذف</button>
+                            </AlertDialogTrigger>
+                            <AlertDialogContent dir="rtl">
+                              <AlertDialogHeader>
+                                <AlertDialogTitle>تأكيد الحذف</AlertDialogTitle>
+                                <AlertDialogDescription>حذف "{item.title}"؟</AlertDialogDescription>
+                              </AlertDialogHeader>
+                              <AlertDialogFooter className="flex-row-reverse gap-2">
+                                <AlertDialogAction onClick={() => handleDelete(item.id)} className="bg-red-600">
+                                  حذف
+                                </AlertDialogAction>
+                                <AlertDialogCancel>إلغاء</AlertDialogCancel>
+                              </AlertDialogFooter>
+                            </AlertDialogContent>
+                          </AlertDialog>
+                        </div>
                       </TableCell>
                     </TableRow>
                   );

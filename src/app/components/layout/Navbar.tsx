@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, LogOut } from "lucide-react";
 import { supabase } from "@/lib/supabaseClient"; // تأكد من مسار الاستيراد الصحيح
+import Image from "next/image";
+
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
