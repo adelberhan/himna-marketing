@@ -46,7 +46,7 @@ export default function Portfolio() {
     <section id="portfolio" className="py-24 bg-transparent" dir="rtl">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">معرض أعمالنا</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-text-100 mb-4">معرض أعمالنا</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
             نستعرض هنا نتاج شغفنا في صناعة المحتوى البصري والإنتاج المرئي.
           </p>
