@@ -1,0 +1,77 @@
+// src/constants/services.tsx أو مسار ملف البيانات لديك
+import { Share2, Palette, Target, ShoppingCart, Code, Search, MapPin, Megaphone, Camera } from "lucide-react";
+
+export const SERVICES_DATA = [
+  {
+    slug: "social-media",
+    title: "إدارة التواصل الاجتماعي",
+    description: "نبني حضورك الرقمي ونتفاعل مع جمهورك لزيادة الولاء للعلامة التجارية.",
+    content: "نقدم إدارة شاملة لحسابات التواصل الاجتماعي تشمل جدولة المنشورات، الرد على التعليقات، وتحليل الأداء الشهري لضمان نمو مستمر وتفاعل حقيقي مع الجمهور المستهدف.",
+    icon: <Share2 className="w-12 h-12" />,
+    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1974&auto=format&fit=crop",
+  },
+  {
+    slug: "content-creation",
+    title: "صناعة المحتوى",
+    description: "نكتب ونصميم محتوى إبداعي يحكي قصة نجاحك ويجذب العملاء.",
+    content: "نركز على صناعة محتوى مرئي ومكتوب يتناسب مع هوية علامتك التجارية، بدءاً من كتابة السيناريو وصولاً إلى التصميم الجرافيكي والموشن جرافيك عالي الجودة.",
+    icon: <Palette className="w-12 h-12" />,
+    image: 'https://www.avermedia.com/files/resize/1440/1be65a7e25a05193e5f0a11332518903.jpg',
+  },
+  {
+    slug: "advertising-campaigns",
+    title: "الحملات الإعلانية",
+    description: "نستهدف الجمهور المناسب بدقة لنضمن لك أعلى عائد على الاستثمار.",
+    content: "إدارة حملات ممولة احترافية على منصات (Snapchat, Instagram, TikTok, Google Ads). نركز على استراتيجيات تحويل الزوار إلى عملاء فعليين.",
+    icon: <Target className="w-12 h-12" />,
+    image: "https://quickframe.mountain.com/wp-content/uploads/2024/07/QF-Blog_Social-Media-Marketing_-Complete-Guide-for-Advertisers-2024_1920x1080.jpg",
+  },
+  {
+    slug: "ecommerce",
+    title: "إنشاء وإدارة المتاجر الإلكترونية",
+    description: "نصمم ونطوّر متاجر احترافية مع إدارة كاملة للمنتجات لزيادة مبيعاتك.",
+    content: "نجهز لك متجرك على منصات (سلة، زد، أو Shopify) مع ربط كامل لبوابات الدفع وشركات الشحن، وتنسيق المنتجات بأسلوب يحفز على الشراء.",
+    icon: <ShoppingCart className="w-12 h-12" />,
+    image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=2089&auto=format&fit=crop",
+  },
+  {
+    slug: "web-development",
+    title: "إنشاء المواقع والتطبيقات",
+    description: "نطوّر مواقع وتطبيقات عصرية وسريعة تلبي احتياجات عملك المميزة.",
+    content: "برمجة مواقع تعريفية متطورة أو منصات خاصة باستخدام أحدث التقنيات لضمان أداء سريع جداً، أمان عالٍ، وتوافق تام مع محركات البحث.",
+    icon: <Code className="w-12 h-12" />,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2026&auto=format&fit=crop",
+  },
+  {
+    slug: "seo",
+    title: "تحسين محركات البحث (SEO)",
+    description: "نحسّن ظهور موقعك في نتائج البحث لزيادة الزيارات وجذب العملاء.",
+    content: "نعمل على تهيئة موقعك داخلياً وتقنياً، مع بناء استراتيجية كلمات مفتاحية قوية ليتصدر نشاطك التجاري الصفحة الأولى في نتائج بحث جوجل.",
+    icon: <Search className="w-12 h-12" />,
+    image: "https://images.unsplash.com/photo-1562577303-c8bf8e100ebf?q=80&w=1974&auto=format&fit=crop",
+  },
+  {
+    slug: "google-maps",
+    title: "حلول مشاكل Google Maps",
+    description: "نساعدك في ظهور نشاطك التجاري على الخرائط وتحسين موقعك المحلي.",
+    content: "توثيق النشاط التجاري، حل مشكلة الحسابات الموقوفة، تحسين التقييمات، وضمان ظهور محلك التجاري للعملاء المحيطين بك بفعالية.",
+    icon: <MapPin className="w-12 h-12" />,
+    image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2006&auto=format&fit=crop",
+  },
+  {
+    slug: "consultancy",
+    title: "الاستشارات التسويقية",
+    description: "نضع لك خططاً استراتيجية مبنية على أرقام وحقائق لضمان نمو أعمالك.",
+    content: "جلسات استشارية معمقة لتحليل المنافسين، دراسة السوق، وبناء خارطة طريق تسويقية تضمن لك التوسع وزيادة الحصة السوقية.",
+    icon: <Megaphone className="w-12 h-12" />,
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
+  },
+  {
+    slug: "photography",
+    title: "خدمات التصوير",
+    description: "نقدّم تصوير احترافي للمنتجات يعكس جودة علامتك التجارية.",
+    content: "جلسات تصوير فوتوغرافي وفيديو احترافية للمنتجات والخدمات، مع مونتاج سينمائي يبرز القيمة الحقيقية لما تقدمه لعملائك.",
+    icon: <Camera className="w-12 h-12" />,
+    image: "https://images.unsplash.com/photo-1552168324-d612d77725e3?q=80&w=1936&auto=format&fit=crop",
+  },
+];

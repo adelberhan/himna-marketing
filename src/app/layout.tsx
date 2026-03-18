@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { FaWhatsapp } from "react-icons/fa6";
 import Link from "next/link";
 import ScrollTopButton from "@/components/ui/ScrollTopButton";
+import Footer from "./components/layout/Footer";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -81,6 +82,7 @@ export default function RootLayout({
             {/* إعطاء مساحة علوية لتجنب تغطية الـ Navbar للمحتوى */}
             {children}
           </main>
+          <Footer />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -101,7 +103,7 @@ export default function RootLayout({
             rel="noopener noreferrer"
             className="group fixed bottom-6 left-6 z-50 px-5 py-3 text-black hover:text-white hover:bg-bg-200 bg-[#25D366] rounded-full font-bold text-sm overflow-hidden transition-all hover:scale-110 active:scale-95 shadow-[0_10px_30px_rgba(0,119,194,0.3)]"
           >
-            <FaWhatsapp className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+            <FaWhatsapp className="w-3 h-3 group-hover:-translate-x-1 transition-transform" />
 
             {/* تأثير اللمعان */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
