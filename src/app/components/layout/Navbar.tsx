@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, LogOut } from "lucide-react";
 import { supabase } from "@/lib/supabaseClient"; // تأكد من مسار الاستيراد الصحيح
+import { Button } from "@/components/ui/button";
 
 
 export default function Navbar() {
@@ -109,13 +110,13 @@ export default function Navbar() {
 
           {/* زر تسجيل الخروج يظهر فقط إذا كان المستخدم مسجلاً */}
           {user && (
-            <button
+            <Button
               onClick={handleLogout}
-              className="flex items-center gap-2 text-red-500 hover:text-red-700 transition-colors font-medium hover:scale-105"
+              className="flex items-center gap-2 text-red-500 bg-red-500/10 hover:text-red-700 transition-colors font-medium hover:scale-105"
             >
               <LogOut className="w-5 h-5" />
               خروج
-            </button>
+            </Button>
           )}
         </div>
 
@@ -144,13 +145,13 @@ export default function Navbar() {
             
             {/* زر تسجيل الخروج في الموبايل */}
             {user && (
-              <button
+              <Button
                 onClick={handleLogout}
-                className="flex items-center justify-center gap-2 text-red-500 font-bold text-lg py-2 hover:bg-red-50 transition-colors rounded-md"
+                className="flex items-center justify-center gap-2 bg-red-500/10 text-red-500 font-bold text-lg py-2 hover:bg-red-50 transition-colors rounded-md"
               >
                 <LogOut className="w-5 h-5" />
                 تسجيل الخروج
-              </button>
+              </Button>
             )}
           </div>
         </div>

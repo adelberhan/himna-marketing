@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Megaphone, Palette, Share2, Target } from "lucide-react";
+import { Camera, Code, MapPin, Megaphone, Palette, Search, Share2, ShoppingCart, Target } from "lucide-react";
 
 const services = [
   {
@@ -23,6 +23,31 @@ const services = [
     description: "نضع لك خططاً استراتيجية مبنية على أرقام وحقائق لضمان نمو أعمالك.",
     icon: <Megaphone className="w-8 h-8" />,
   },
+  {
+  title: "تحسين محركات البحث (SEO)",
+  description: "نحسّن ظهور موقعك في نتائج البحث لزيادة الزيارات وجذب العملاء المحتملين بشكل مستمر.",
+  icon: <Search className="w-8 h-8" />,
+},
+{
+  title: "إنشاء وإدارة المتاجر الإلكترونية",
+  description: "نصمم ونطوّر متاجر احترافية مع إدارة كاملة للمنتجات وعمليات الدفع لزيادة مبيعاتك.",
+  icon: <ShoppingCart className="w-8 h-8" />,
+},
+{
+  title: "إنشاء المواقع والتطبيقات",
+  description: "نطوّر مواقع وتطبيقات عصرية وسريعة تلبي احتياجات عملك وتقدّم تجربة مستخدم مميزة.",
+  icon: <Code className="w-8 h-8" />,
+},
+{
+  title: "حلول مشاكل Google Maps",
+  description: "نساعدك في حل مشاكل ظهور نشاطك التجاري على Google Maps وتحسين موقعك في النتائج المحلية.",
+  icon: <MapPin className="w-8 h-8" />,
+},
+{
+  title: "خدمات التصوير",
+  description: "نقدّم تصوير احترافي للمنتجات والخدمات يعكس جودة علامتك التجارية ويجذب العملاء.",
+  icon: <Camera className="w-8 h-8" />,
+},
 ];
 
 export default function Services() {
@@ -48,7 +73,7 @@ export default function Services() {
               transition={{ delay: index * 0.1 }}
               className="bg-bg-100 p-8 rounded-3xl shadow-soft hover:shadow-xl transition-all border border-primary-300/20 group hover:-translate-y-2"
             >
-              <div className="w-16 h-16 bg-primary-300/30 rounded-2xl flex items-center justify-center text-primary-100 mb-6 group-hover:bg-primary-100 group-hover:text-white transition-colors">
+              <div className="w-16 h-16 bg-primary-300/30 rounded-2xl flex items-center justify-center text-primary-100 mb-6 group-hover:bg-primary-100 group-hover:text-primary-200 transition-colors">
                 {service.icon}
               </div>
               <h3 className="text-xl font-bold text-text-100 mb-3">
