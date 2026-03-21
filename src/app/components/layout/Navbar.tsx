@@ -78,8 +78,8 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="group">
           <img
-            src="/MainLogo.png"
-            alt="Himna Marketing Logo"
+            src="/digital-marketing-agency-riyadh.png"
+            alt="وكالة تسويق رقمي في الرياض"
             className="h-12 md:h-20 w-auto group-hover:scale-105 transition-transform"
           />
         </Link>

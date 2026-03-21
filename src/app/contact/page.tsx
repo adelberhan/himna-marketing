@@ -8,7 +8,7 @@ export default function ContactPage() {
         <Contact />
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

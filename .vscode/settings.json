@@ -1,0 +1,22 @@
+{
+  "models": [
+    {
+      "title": "DeepSeek",
+      "provider": "ollama",
+      "model": "deepseek-coder",
+      "apiBase": "http://localhost:11434"
+    },
+    {
+      "title": "Qwen",
+      "provider": "ollama",
+      "model": "qwen2.5-coder:7b",
+      "apiBase": "http://localhost:11434"
+    },
+    {
+      "title": "Llama3",
+      "provider": "ollama",
+      "model": "llama3",
+      "apiBase": "http://localhost:11434"
+    }
+  ]
+}

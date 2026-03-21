@@ -8,7 +8,7 @@ export default function AboutUsPage() {
         <About />
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

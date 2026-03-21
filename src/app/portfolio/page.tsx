@@ -9,7 +9,7 @@ export default function PortfolioPage() {
         <Portfolio />
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
