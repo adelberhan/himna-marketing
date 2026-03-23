@@ -141,7 +141,7 @@ export default function TestimonialsManagement() {
             type="submit"
             className="w-full border border-white/10 px-6 font-bold bg-green-500/10 text-green-400 hover:bg-green-500/30 sm:w-auto sm:px-12"
           >
-            {editing ? "تحديث التعليق" : "إضافة تعليق جديد"}
+            {editing ? "تحديث " : "إضافة "}
           </Button>
           {editing && (
             <Button
@@ -153,7 +153,7 @@ export default function TestimonialsManagement() {
               }}
               className="w-full border-white/10 bg-transparent text-red-400 hover:bg-red-500/10 sm:w-auto"
             >
-              إلغاء التعديل
+              إلغاء 
             </Button>
           )}
         </div>

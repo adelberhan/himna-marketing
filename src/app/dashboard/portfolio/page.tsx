@@ -191,9 +191,9 @@ export default function PortfolioManagement() {
         <div className="flex flex-col gap-2 sm:flex-row">
           <Button
             type="submit"
-            className="w-full px-6 font-bold text-black transition-all hover:bg-gray-200 sm:w-auto sm:px-12"
+            className="w-full px-6 font-bold  transition-all bg-green-500/10 text-green-400 hover:bg-green-500/30 sm:w-auto sm:px-12"
           >
-            {editing ? "تحديث التعديلات" : "إضافة للعمل"}
+            {editing ? "تحديث " : "إضافة "}
           </Button>
           {editing && (
             <Button
@@ -203,9 +203,9 @@ export default function PortfolioManagement() {
                 setEditing(false);
                 setForm(initialFormState);
               }}
-              className="w-full border-white/20 text-white hover:bg-white/10 sm:w-auto"
+              className="w-full border-white/20 text-red-400 hover:bg-white/10 sm:w-auto"
             >
-              إلغاء التعديل
+              إلغاء 
             </Button>
           )}
         </div>
