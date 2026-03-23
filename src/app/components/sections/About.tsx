@@ -12,6 +12,7 @@ export default function About() {
 
   return (
     <section id="about" className="py-15 bg-bg-200 overflow-hidden">
+      
       <div className="text-center mb-16">
         {/* العنوان الرئيسي بنفس نمط "خدماتنا الإبداعية" */}
         <h2 className="text-3xl md:text-5xl font-bold text-text-100 mb-4">شريكك في النجاح الرقمي</h2>
@@ -71,6 +72,7 @@ export default function About() {
           </motion.div>
         </div>
       </div>
+      
     </section>
   );
 }

@@ -1,9 +1,10 @@
 // src/app/services/[slug]/page.tsx
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { SERVICES_DATA } from "../services"; // تأكد من صحة مسار ملف البيانات
 import { FaWhatsapp } from "react-icons/fa";
+import RelatedServices from "../RelatedServices";
 
 // في Next.js 15، يجب تعريف params كـ Promise
 type Props = {
@@ -44,6 +45,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 service.image ||
                 "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2026&auto=format&fit=crop"
               }
+              loading="lazy"
               alt={service.title}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
@@ -130,6 +132,8 @@ export default async function ServiceDetailPage({ params }: Props) {
             </div>
           ))}
         </div> */}
+
+        <RelatedServices currentSlug={service.slug} />
       </div>
     </main>
   );

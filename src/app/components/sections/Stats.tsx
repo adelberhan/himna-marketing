@@ -52,6 +52,7 @@ export default function Stats() {
           ))}
         </div>
       </div>
+      
     </section>
   );
 }

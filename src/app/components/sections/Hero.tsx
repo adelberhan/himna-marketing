@@ -15,7 +15,7 @@ export default function Hero() {
         {/* <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-20"></div> */}
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 text-center">
+      <div className="container mx-auto px-6 relative z-10 text-center ">
         {/* 2. شارة علوية (Badge) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -53,8 +53,8 @@ export default function Contact() {
                 </a>
               ))}
 
-              <div className="p-6 bg-bg-200 rounded-3xl border border-primary-300/10">
-                <MapPin className="w-6 h-6 text-primary-100 mb-4" />
+              <div className="p-6 bg-bg-200 rounded-3xl border border-primary-300/10  transition-all group">
+                <MapPin className="w-6 h-6 text-primary-100 mb-4 group-hover:scale-110 transition-transform" />
                 <h4 className="text-text-200 text-sm mb-1">الموقع</h4>
                 <p className="text-text-100 font-bold">
                   شارع جبور بن رشيد حي المربع, الرياض 12628, المملكة العربية السعودية
@@ -82,6 +82,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      
     </section>
   );
 }
